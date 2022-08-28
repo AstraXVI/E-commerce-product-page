@@ -6,6 +6,10 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
 }
+.body-wrapper{
+    overflow-x: hidden;
+    position: relative;
+}
 ul{
     list-style: none;
 }

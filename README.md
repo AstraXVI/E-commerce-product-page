@@ -11,3 +11,5 @@ Description: This is my own solution to the E-commerce product page challenge fr
 - Responsive user interface(mobile, tablet and desktop)
 - Add to cart feature
 - Images carousel for mobile and desktop
+
+Live Site URL: https://astraxvi.github.io/E-commerce-product-page/
