@@ -1,0 +1,533 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: hsl(220, 13%, 13%);
+    text-decoration: none;
+}
+.pointer{
+    cursor: pointer;
+}
+.hover:hover{
+    opacity: .7;
+}
+
+/* ******************************************** */
+
+.desktop-menu{
+    display: none;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 5%;
+}
+.left-nav > img:nth-child(1){
+    margin-right: 10px;
+}
+.avatar{
+    width: 22px;
+    margin-left: 15px;
+}
+.avatar:hover{
+    outline: 3px solid orange;
+    border-radius: 50%;
+    transition: outline .3s;
+}
+.right-nav{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* ********************mobile menu css****************** */
+
+.mobile-menu{
+    position: absolute;
+    top: 0;
+    padding-top: 22px;
+    left: 0;
+    padding-left: 21px;
+    z-index: 4;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: all .4s;
+}
+.mobile-menu ul{
+    margin-top: 40px;
+}
+.mobile-menu li{
+    padding-bottom: 25px;
+    font-weight: 700;
+}
+.mobile-menu a{
+    padding-right: 40px;
+    padding-block: 5px;
+    color:hsl(220, 13%, 13%);
+}
+.mobile-menu a:hover{
+    border-right: 4px solid orange;
+    color: hsl(220, 14%, 75%);
+    transition: all .3s;
+}
+
+/* ************cart css************** */
+.cart-product-count{
+    position: absolute;
+    right: 30px;
+    top: -7px;
+    background-color: orange;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px 3px 6px;
+    display: none;
+}
+
+.cart{
+    min-height: 270px;
+    max-height: 370px;
+    overflow-y: scroll;
+    width: min(350px, 94%);
+    position: absolute;
+    top: 75px;
+    z-index: 3;
+    right: 3%;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    animation-name: fade;
+    animation-duration: .3s;
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.301);
+}
+@keyframes fade {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.cart h4{
+    margin: 20px;
+    font-size: 20px;
+}
+hr{
+    opacity: .3;
+}
+.no-item-message{
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 700;
+    color: hsl(220, 14%, 75%);
+}
+
+/* *layout and design of items in the cart */
+.add-to-cart-products{
+    margin: 25px;
+}
+.product-container{
+    display: flex;
+    flex-direction: column;
+}
+.cart-product-info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.cart-product-picture{
+    width: 55px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.delete{
+    margin-inline: auto 0;
+}
+
+/* *image carousel mobile */
+.product-images-mobile, .lightbox-product-images-mobile{
+    display: flex;
+    flex-direction: row;
+}
+.product-images-mobile > img{
+    width: 100%;
+}
+.previous, .lightbox-previous{
+    padding: 10px 13px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 14.5rem;
+}
+.next, .lightbox-next{
+    padding: 10px 13px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    right: 15px;
+    top: 14.5rem;
+}
+.product-images-choices{
+    display: none;
+}
+
+/* **************product-info css**************** */
+.product-info{
+    width: 92%;
+    margin: 0 auto;
+    margin-block: 20px 70px;
+}
+span{
+    text-transform: uppercase;
+    color: hsl(26, 100%, 55%);
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.product-info h1{
+    margin-block: 10px 15px;
+    font-size: 1.80rem;
+    color: hsl(220, 13%, 13%);
+}
+.product-info p{
+    font-weight: 400;
+    color: hsl(219, 9%, 45%);
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 20px 25px; 
+}
+.price h4{
+    font-size: 1.6rem;
+}
+.price h4::after{
+    content: '50%';
+    font-size: .9rem;
+    padding: 3px 6px;
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+    border-radius: 5px;
+    margin-left: 15px;
+    vertical-align: 4px;
+}
+.price h5{
+    color: hsl(220, 14%, 75%);
+    text-decoration: line-through;
+}
+.how-many-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 10px;
+}
+.add-to-cart-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+    padding-block: 15px;
+    border-radius: 8px;
+    transition: all .3s;
+}
+#cart-button{
+    width: 86%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: none;
+}
+#add{
+    box-shadow: 0 20px 15px 10px hsl(25, 100%, 94%);
+}
+.add-to-cart-button:hover{
+    background-color: hsl(25, 100%, 75%);
+}
+.add-to-cart-button:focus{
+    background-color: hsl(26, 100%, 55%);
+}
+.add-cart > button > img{
+    width: 16px;
+}
+.lightbox{
+    display: none;
+}
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 80px; 
+    }
+    .attribution a {
+    color: hsl(228, 45%, 44%); 
+    }
+
+
+/* classlist */
+
+.previous-item{
+    transform: translateX(-100%);
+}
+.open{
+    transform: translateX(0%);
+}
+.backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}
+.show-backdrop{
+    opacity: 1;
+    z-index: 3;
+}
+.open-cart{
+    display: block;
+}
+
+
+
+/* *************************tablet view **************************/
+
+@media (min-width: 768px) {
+    .open-mobile-menu, .lightbox {
+        display: none;
+    }
+    .next, .previous{
+        display: none;
+    }
+    .desktop-menu li a{
+        font-size: 15px;
+    }
+    .desktop-menu, .wrapper{
+        display: flex;
+    }
+    .desktop-menu ul{
+        display: flex;
+        gap: 15px;
+        margin-left: 40px;
+    }
+    section{
+        margin-top: 40px;
+    }
+    
+    /* ***********************desktop-menu css********************** */
+    .desktop-menu a{
+        padding-bottom: 20px;
+        font-size: 17px;
+    }
+    .desktop-menu a:hover{
+    border-bottom: 4px solid orange;
+    color: hsl(220, 14%, 75%);
+    transition: all .3s;
+    }
+
+    /* ****************** Product Picture ****************** */
+
+    .container{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .product-images-choices{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .product-images-choices > img{
+        width: 90px;
+    }
+    .product-images-mobile{
+        width: 420px;
+        overflow: hidden;
+    }
+    #one, #pic-one{
+        width: 420px;
+        height: 420px;
+        border-radius: 20px;
+    }
+    .animation{
+        transition: all .3s;
+        transform: translateX(0%);
+    }
+    @keyframes fade {
+        from{
+            transform: scale(0);
+        }
+        to{
+            transform: scale(1);
+        }
+    }
+    .picture-thumbnail, .lightbox-picture-thumbnail{
+        border-radius: 10px;
+    }
+    .picture-thumbnail:hover, .lightbox-picture-thumbnail:hover{
+        opacity: .5;
+    }
+    
+    /* *******************product-info css**************** */
+
+    .product-info{
+        width: 80%;
+    }
+
+    /* ************************************* */
+
+    .price{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-cart{
+        display: flex;
+        gap: 20px;
+    }
+    .how-many-items{
+        width: 120px;
+    }
+    .add-to-cart-button{
+        margin-top: unset;
+        width: 230px;
+    }
+}
+/* **********************for small laptop view******************* */
+
+@media (min-width: 1024px) {
+    .lightbox{
+        display: block;
+    }
+    html{
+        font-size: 18px;
+    }
+    .desktop-menu ul{
+        gap: 30px;
+    }
+    .desktop-menu li a{
+        font-size: 16px;
+    }
+    section{
+        display: flex;
+        align-items: center;
+        width: 92%;
+        justify-content: center;
+        margin-inline: auto;
+        gap: 5%;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .product-images-choices{
+        flex-direction: row;
+    }
+    .product-info{
+        width: 100%;
+    }
+    .avatar{
+        width: 35px;
+    }
+    .cart-product-count{
+        right: 43px;
+        top: -2px;
+    }
+    
+}
+
+/* *******for large laptop view********  */
+
+@media (min-width: 1440px) {
+    html{
+        font-size: 20px;
+    }
+    nav{
+        max-width: 1200px;
+        margin-inline: auto;
+        margin-block: 30px;
+    }
+    section{
+        margin-top: 80px;
+        max-width: 1100px;
+        gap: 130px;
+    }
+    .product-info h1{
+        font-size: 50px;
+    }
+    .desktop-menu ul{
+        gap: 40px;
+        margin-left: 60px;
+    }
+    .desktop-menu li a{
+        font-size: 17px;
+    }
+    .how-many-items{
+        width: 140px;
+    }
+    .add-to-cart-button{
+        width: 300px;
+    }
+
+}
+
+/* ************************lightbox css****************** */
+.lightbox{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+.container-container{
+    width: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    margin-inline: auto;
+}
+.lightbox .container{
+    overflow-x: hidden;
+}
+.lightbox-close{
+    margin-left: auto;
+    margin-bottom: -10px;
+}
+.lightbox-next, .lightbox-previous{
+    display: block;
+    width: 14px;
+    position: absolute;
+}
+.lightbox-previous{
+    left: -20px;
+    top: 210px;
+}
+.lightbox-next{
+    right: -20px;
+    top: 210px;
+}
+.lightbox-product-images-mobile{
+    width: 420px;
+    
+}
+.lightbox-product-images-mobile > img{
+    width: 420px;
+    border-radius: 20px;
+}
