@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="minus">-</button><input type="number" id="userInput"><button id="add">+</button><span id="number_cart"></span>
+    <br>
+    <br>
+    <button id="addBtn">ADD</button>
+    
+    <div id="result">
+
+    </div>
+
+    <script>
+        const userInput = document.getElementById("userInput");
+        let tempValue = 1;
+
+        const add = document.querySelector('#add');
+        const minus = document.querySelector('#minus');
+
+        add.addEventListener('click',function(){
+            userInput.value = tempValue++;
+        })
+
+        minus.addEventListener('click',function(){
+            if(userInput.value <= 0) return ;
+
+            else{
+                userInput.value = tempValue--;
+            }
+                
+            
+        })
+
+
+        const addBtn = document.getElementById("addBtn");
+
+        const result = document.getElementById("result");
+        const numberCart = document.getElementById("number_cart");
+
+        let lists = [];
+
+        addBtn.addEventListener('click',function(){
+            
+            result.innerHTML = '';
+            
+            lists.push(userInput.value);
+            numberCart.textContent = lists.length;
+
+            console.log(lists)
+           for(let list of lists){
+            
+           }
+        })
+    </script>
+</body>
+</html>

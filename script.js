@@ -79,32 +79,35 @@ addToCart.addEventListener('click', (minus, plus, previous, next) => {
 
     div.insertAdjacentElement('afterend', deleteButton);
 
-    deleteButton.onclick = () => {
+    let cartProductCount = document.querySelector('.cart-product-count');
+    let cartItemsCount = addToCartProducts.childElementCount;
+    
+
+    // *when cart have items 
+    if(cartItemsCount > 0){
+        document.querySelector('.no-item-message').style.display = 'none';
+        document.querySelector('#cart-button').style.display = 'block';
+        cartProductCount.style.display = 'block';
+        cartProductCount.innerText++;
+    }
+    
+    deleteButton.addEventListener('click', () => {
         deleteButton.parentElement.remove();
 
-        let cartProductCount = document.querySelector('.cart-product-count');
-        let toNumber = parseInt(cartProductCount.innerText);
+        let cartCount = parseInt(cartProductCount.innerText);
         
 
         // *when there are no items in the cart
-        if(toNumber == 1){
+        if(cartCount === 1){
             cartProductCount.style.display = 'none';
             document.querySelector('#cart-button').style.display = 'none';
             document.querySelector('.no-item-message').style.display = 'block';
         }
-        else{
         cartProductCount.innerText--;
-        }
-    };
 
-    // *when cart have items 
-    if(addToCartProducts.children.length > 0){
-        document.querySelector('.no-item-message').style.display = 'none';
-        document.querySelector('#cart-button').style.display = 'block';
-        let cartProductCount = document.querySelector('.cart-product-count');
-        cartProductCount.style.display = 'block';
-        cartProductCount.innerText = `${addToCartProducts.children.length}`;
-    }
+    });
+
+
 });
 
 // *for images carousel for mobile
